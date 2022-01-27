@@ -1,0 +1,15 @@
+[Unit]
+Description=Initialisation the atapipelinemonitor
+After=network.target
+Requires=network.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStartPre=/usr/bin/test -d /opt/mnt/bin
+ExecStart=/usr/local/bin/init_atapipelinemonitor.sh
+ExecStop=pkill -ef "/bin/bash /usr/local/bin/init_atapipelinemonitor.sh"
+StartLimitIntervalSec=0
+
+[Install]
+WantedBy=multi-user.target

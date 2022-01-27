@@ -1,0 +1,16 @@
+[Unit]
+Description=Initialisation of Meta Marshall
+#RequiresMountsFor=/opt/mnt /home
+After=network.target
+Requires=network.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStartPre=/usr/bin/test -d /opt/mnt/bin
+ExecStart=/usr/local/bin/init_meta_marshall.sh
+ExecStop=pkill -ef "meta_marshall.py"
+StartLimitIntervalSec=0
+
+[Install]
+WantedBy=multi-user.target
