@@ -5,19 +5,12 @@ then
   echo "Please run with super-user privileges"
   exit 1
 else
-	cp ./hpguppi*.service /etc/systemd/system/
-	cp ./redis_gateway.service /etc/systemd/system/
-	cp ./init_hpguppi*.sh /usr/local/bin/
-	cp ./hpguppi_service.conf /opt/mnt/share/
-	cp ./redis_gateway_service.conf /opt/mnt/share
+	cp ./hpdaq.service /etc/systemd/system/
+	cp ./hpdaq_service.conf /opt/mnt/share/
 
-	systemctl disable hpguppi
-	systemctl disable hpguppi_pypeline
-	systemctl disable redis_gateway
+	systemctl disable hpdaq
 	systemctl daemon-reload
-	systemctl enable hpguppi
-	systemctl enable hpguppi_pypeline
-	systemctl enable redis_gateway
+	systemctl enable hpdaq
 
 	# echo
 	echo To install Meta Marshall as a service:
