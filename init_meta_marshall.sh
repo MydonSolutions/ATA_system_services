@@ -1,7 +1,10 @@
 #!/bin/bash
 # conda activate rfsoc8bit
 echo '+ conda activate rfsoc8bit'
-source /home/sonata/miniconda3/bin/activate /home/sonata/miniconda3/envs/rfsoc8bit
+#source /home/sonata/miniconda3/bin/activate /home/sonata/miniconda3/envs/rfsoc8bit
+
+export ATA_FENGINE_TAB_FILENAME=ata_rfsoc_20240528.tab
+
 # export ATASHAREDIR="/opt/mnt"
 export ATASHAREDIR=/opt/mnt
 

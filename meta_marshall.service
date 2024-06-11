@@ -5,6 +5,7 @@ After=network.target
 Requires=network.target
 
 [Service]
+Environment="ATA_FENGINE_TAB_FILENAME=ata_rfsoc_20240528.tab"
 Type=simple
 Restart=always
 ExecStartPre=/usr/bin/test -d /opt/mnt/bin
